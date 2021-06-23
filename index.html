@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 프론트엔드 개발기</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- 홍길동: 본인의 이름을 적어주세요 -->
+        <a class="navbar-brand" href="/">나의 프론트엔드 개발기 (김석현)</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="titlewrap">
+        <h3>학습</h3>
+        <div class="btnwrap">
+          <!-- 학습리스트 필터 -->
+          <div class="btn-group" role="group">
+            <!-- 선택된 버튼에만 active 속성 추가 -->
+            <button
+              id="Lecture-Filter-All"
+              type="button"
+              class="btn btn-outline-primary active class-btn"
+            >
+              모두
+            </button>
+            <button
+              id="Lecture-Filter-Helplink"
+              type="button"
+              class="btn btn-outline-primary class-btn"
+            >
+              도움링크
+            </button>
+            <button
+              id="Lecture-Filter-Git"
+              type="button"
+              class="btn btn-outline-primary class-btn"
+            >
+              git
+            </button>
+            <button
+              id="Lecture-Filter-Recent"
+              type="button"
+              class="btn btn-outline-primary class-btn"
+            >
+              최신순
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="spinner-border" role="status" id="LectureLoadingSpin">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 5%">주차</th>
+            <!-- title -->
+            <th scope="col" style="width: 30%">제목</th>
+            <!-- docUrl -->
+            <th scope="col" style="width: 10%">학습내용</th>
+            <!-- link -->
+            <th scope="col" id="Lecture-Help-Link" style="width: 20%">
+              도움링크
+            </th>
+            <!-- date -->
+            <th scope="col" style="width: 20%">날짜</th>
+            <!-- gitUrl -->
+            <th scope="col" width="100" style="width: 15%">실습</th>
+          </tr>
+        </thead>
+        <tbody id="LectureTableBody"></tbody>
+      </table>
+      <div class="titlewrap">
+        <h3>퀴즈</h3>
+        <!-- 퀴즈리스트 필터 -->
+        <div class="btnwrap">
+          <div class="btn-group" role="group">
+            <button
+              id="Quiz-Filter-All"
+              type="button"
+              class="btn btn-outline-primary active quiz-btn"
+            >
+              모두
+            </button>
+            <button
+              id="Quiz-Filter-Git"
+              type="button"
+              class="btn btn-outline-primary quiz-btn"
+            >
+              git
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="spinner-border" role="status" id="QuizLoadingSpin">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- title -->
+            <th scope="col" style="width: 50%">제목</th>
+            <!-- docUrl -->
+            <th scope="col" style="width: 20%">문제</th>
+            <!-- previewUrl -->
+            <th scope="col" style="width: 20%">미리보기</th>
+            <!-- gitUrl -->
+            <th scope="col" style="width: 10%">실습</th>
+          </tr>
+        </thead>
+        <tbody id="QuizTableBody"></tbody>
+      </table>
+    </div>
+  </body>
+  <script src="dist/main.js"></script>
+</html>
